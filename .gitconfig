@@ -1,0 +1,33 @@
+[user]
+	name = 
+	email = 
+[alias]
+	co = checkout
+	s = status
+	b = branch
+# find word in path
+	f = "!git ls-files | grep -i" 
+# find word in codebase
+	grep = grep -Ii
+	gr = grep -Ii
+# list commits in short form
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+# list commits showing changed files
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+# show history of file
+  filelog = log -u
+  fl = log -u
+# modified files in last commit
+	dl = "!git ll -1"
+# show a diff last commit
+	dlc = diff --cached HEAD^
+# show aliases
+  aliases = "!git config -l | grep alias | cut -c 7-"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/perhak/.gitignore
+	editor = vim
+[push]
+	default = simple
